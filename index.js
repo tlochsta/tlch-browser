@@ -36,17 +36,9 @@ function createWindow() {
 
   browserView = new BrowserView();
   mainWindow.setBrowserView(browserView);
-
-  // Initial bounds setup
   updateBrowserViewBounds();
-
-  // Load the main UI
   mainWindow.loadFile('index.html');
-
-  // Load initial URL
   browserView.webContents.loadURL('http://app.tlch');
-
-  // Handle navigation and resize events
   mainWindow.on('resize', updateBrowserViewBounds);
   mainWindow.on('move', updateBrowserViewBounds);
 
